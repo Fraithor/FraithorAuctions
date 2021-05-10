@@ -13,10 +13,12 @@ public class AuctionGUI {
 
     public AuctionGUI() {
         inv = Bukkit.createInventory(null, 9, "Auction house");
-        initializeItems();
+        //initializeItems();
     }
 
+    /*STUCK HERE
     private void initializeItems() {
         for (ongoing og: )
     }
+    */
 }
