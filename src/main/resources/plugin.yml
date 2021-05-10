@@ -1,0 +1,39 @@
+name: FraithorAuctions
+
+authors:
+  - Fraithor
+  - RonanCraft
+
+version: 1.0-0
+
+main: com.fraithor.fraithorauctions.FraithorAuctions
+
+commands:
+  fraithorauctions:
+    description: Help menu
+    aliases:
+      - fa
+      - fauctions
+  auctions:
+    description: Open auction menu
+    aliases:
+      - ah
+      - auction
+      - auctionhouse
+      - auctionh
+      - ahouse
+
+permissions:
+
+  fraithorauctions:
+    description: Main permission
+    default: op
+
+  fraithorauctions.view:
+    description: Permission to view GUI
+
+  fraithorauctions.bid:
+    description: Permission to place bid
+
+  fraithorauctions.create:
+    description: Permission to create auctions
