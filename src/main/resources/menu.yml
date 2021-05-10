@@ -1,0 +1,8 @@
+MainPage:
+  Title: '&7Auction House'
+  Bank:
+    Name: '&eCheck Bank'
+    Item: 'gold_ingot'
+    Lore:
+      - ''
+      - '&7Click to check bank balance!'
