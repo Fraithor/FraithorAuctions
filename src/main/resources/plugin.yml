@@ -3,18 +3,16 @@ api-version: 1.13
 authors:
   - Fraithor
   - RonanCraft
-version: 1.0-0
+version: ${project.version}
 main: com.fraithor.fraithorauctions.FraithorAuctions
 
 commands:
   fraithorauctions:
-    description: Help menu
+    description: Open auctions GUI
     aliases:
       - fa
       - fauctions
-  auctions:
-    description: Open auction menu
-    aliases:
+      - auctions
       - ah
       - auction
       - auctionhouse

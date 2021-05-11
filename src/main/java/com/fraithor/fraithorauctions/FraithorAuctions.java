@@ -1,10 +1,10 @@
 package com.fraithor.fraithorauctions;
 
 import com.fraithor.fraithorauctions.Util.File.FileBasics;
+import com.fraithor.fraithorauctions.Util.Message;
 import com.fraithor.fraithorauctions.Util.auctiondata.AuctionManager;
 import com.fraithor.fraithorauctions.Util.playerdata.PlayerData;
 import com.fraithor.fraithorauctions.Util.playerdata.PlayerDataManager;
-import com.fraithor.fraithorauctions.commands.CmdAuctions;
 import com.fraithor.fraithorauctions.commands.CmdMain;
 import com.fraithor.fraithorauctions.events.EventListener;
 import com.fraithor.fraithorauctions.inventories.AuctionInvLoader;
@@ -22,7 +22,6 @@ public class FraithorAuctions extends JavaPlugin {
     private static FraithorAuctions instance;
 
     public static final CmdMain mainCommand = new CmdMain();
-    private static final CmdAuctions auctions = new CmdAuctions();
     private static final EventListener eventListener = new EventListener();
     private static final PlayerDataManager dataManager = new PlayerDataManager();
     private static final AuctionManager auctionManager = new AuctionManager();
@@ -30,9 +29,8 @@ public class FraithorAuctions extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Objects.requireNonNull(this.getCommand("fraithorauctions")).setExecutor(mainCommand);
-        Objects.requireNonNull(this.getCommand("auctions")).setExecutor(auctions);
         instance = this;
+        Objects.requireNonNull(this.getCommand("fraithorauctions")).setExecutor(mainCommand);
         eventListener.load(); //Only needs to be loaded once
         loadAll();
     }
@@ -40,7 +38,7 @@ public class FraithorAuctions extends JavaPlugin {
     public void reload(CommandSender sendi) {
         loadAll();
         //MessagesCore.RELOAD.send(sendi);
-        sendi.sendMessage("Reloaded!");
+        Message.toSendi(sendi, "Reloaded plugin!");
         exitMenus();
     }
 
