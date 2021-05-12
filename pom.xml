@@ -13,7 +13,15 @@
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
     <build>
+        <!-- Updates the version in plugin.yml -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
+            <!-- Local jar building -->
             <plugin>
                 <!-- Local Server Building -->
                 <groupId>org.apache.maven.plugins</groupId>
