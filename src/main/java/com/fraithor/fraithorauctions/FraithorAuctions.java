@@ -27,14 +27,7 @@ public class FraithorAuctions extends JavaPlugin {
     private static AuctionManager auctionManager;
     private static final FileBasics files = new FileBasics();
 
-    @Override
-    public void onEnable() {
-        instance = this;
-        auctionManager = new AuctionManager();
-        Objects.requireNonNull(this.getCommand("fraithorauctions")).setExecutor(mainCommand);
-        eventListener.load(); //Only needs to be loaded once
-        loadAll();
-    }
+
 
     public void reload(CommandSender sendi) {
         loadAll();
