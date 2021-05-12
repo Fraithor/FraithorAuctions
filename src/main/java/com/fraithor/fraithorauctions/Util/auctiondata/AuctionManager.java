@@ -18,7 +18,7 @@ public class AuctionManager {
         //LOAD ALL AUCTION DATA INTO "auctions"
 
          for (String ongoing : file.getKeys(false)) {
-             int price = file.getInt("Price");
+             int price = file.getInt("price");
              ItemStack item = file.getItemStack("Item");
              auctions.add(new AuctionInfo(price, item));
          }

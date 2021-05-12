@@ -24,12 +24,13 @@ public class FraithorAuctions extends JavaPlugin {
     public static final CmdMain mainCommand = new CmdMain();
     private static final EventListener eventListener = new EventListener();
     private static final PlayerDataManager dataManager = new PlayerDataManager();
-    private static final AuctionManager auctionManager = new AuctionManager();
+    private static AuctionManager auctionManager;
     private static final FileBasics files = new FileBasics();
 
     @Override
     public void onEnable() {
         instance = this;
+        auctionManager = new AuctionManager();
         Objects.requireNonNull(this.getCommand("fraithorauctions")).setExecutor(mainCommand);
         eventListener.load(); //Only needs to be loaded once
         loadAll();
